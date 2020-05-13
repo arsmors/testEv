@@ -23,7 +23,9 @@ public class HomePage {
         baseFunc.openPage(homePage + category);
     }
 
-    public void chooseAdFromList(int id) {
+    public void chooseRandomAdFromList() {
+        Random num = new Random();
+        int id = num.nextInt(10);
         getItems(id).click();
     }
 
@@ -40,12 +42,5 @@ public class HomePage {
     public String getMemoId() {
         return baseFunc.getElement(MEMOID).getText();
     }
-
-    public int randomNumber() {
-        Random num = new Random();
-        int n = num.nextInt(10);
-        return n;
-    }
-
 
 }

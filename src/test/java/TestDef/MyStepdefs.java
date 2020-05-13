@@ -17,7 +17,7 @@ public class MyStepdefs {
 
     @When("user open single ad")
     public void userDrilldownIntoAd() {
-        homePage.chooseAdFromList(1);
+        homePage.chooseRandomAdFromList();
     }
 
     @And("add to favorites")
@@ -29,5 +29,6 @@ public class MyStepdefs {
     public void adsWithCountAreDisplayedInMemosPage(String count) {
         String id = homePage.getMemoId();
         Assert.assertTrue("Test failed", id.contains(count));
+        baseFunc.closePage();
     }
 }
