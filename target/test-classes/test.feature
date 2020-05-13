@@ -2,11 +2,10 @@ Feature: A description
 
   Scenario Outline: A scenario
     Given website with category "<category>"
-#    When user select "<ads>" ads
-#    And add to memos
-#    Then ads with count 1 are displayed in memos page
-#    And user deletes all ads from memo page
+    When user open single ad
+    And add to favorites
+    Then ads with count "<count>" are displayed in memos page
 
     Examples:
-      | category                                 | ads |
-      | /electronics/phones/mobile-phones/apple/ | 1   |
+      | category                                 | count |
+      | /electronics/phones/mobile-phones/apple/ | (1)   |
