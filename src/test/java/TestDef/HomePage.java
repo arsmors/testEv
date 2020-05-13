@@ -13,6 +13,7 @@ public class HomePage {
     private final By ADDTOFAVORITES = By.xpath("//a[@title=\"Add to favorites\"]");
     private final By ALERTOK = By.xpath("//*[@id=\"alert_ok\"]");
     private final By MEMOID = By.xpath("//span[@id=\"mnu_fav_id\"]");
+    private final By MEMOPAGEADS = By.xpath("//td[@class=\"msga2 pp0\"]");
 
 
     public HomePage(BaseFunc baseFunc) {
@@ -42,5 +43,10 @@ public class HomePage {
     public String getMemoId() {
         return baseFunc.getElement(MEMOID).getText();
     }
+
+//    private WebElement getAds(int id) {
+//        List<WebElement> items = baseFunc.getElements(MEMOPAGEADS);
+//        return items.get(id);
+//    }
 
 }
