@@ -4,7 +4,6 @@ Feature: A description
     Given website with category "<category>"
     When user open single ad
     And add to favorites
-#    Then ads with count "<count>" are displayed in memos page
     Then ads are displayed on page
     And ads count on page is similar to memo count on toolbar
 

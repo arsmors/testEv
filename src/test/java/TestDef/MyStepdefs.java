@@ -4,15 +4,11 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import net.bytebuddy.implementation.bytecode.Throw;
-import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
 import java.util.List;
 
-import static com.sun.tools.doclint.Entity.not;
-import static java.util.Optional.empty;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 
@@ -59,4 +55,12 @@ public class MyStepdefs {
 
        baseFunc.closePage();
     }
+
+
+    @When("user select {int} ads")
+    public void userSelectAds(int ads) {
+        homePage.chooseMultipleAdsFromList(ads);
+
+    }
+
 }
