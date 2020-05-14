@@ -63,4 +63,9 @@ public class MyStepdefs {
 
     }
 
+    @When("user go to {string} section")
+    public void userGoToSection(String item) {
+        homePage.openHomePage("");
+        homePage.selectMenuItem(item);
+    }
 }

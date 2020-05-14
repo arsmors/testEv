@@ -9,6 +9,7 @@ import java.util.Random;
 public class HomePage {
     BaseFunc baseFunc;
     private final By MAIN = By.xpath("//a[@class=\"am\"]");
+    private final By MAIN_MENU = By.xpath("//*[@class=\"menu_main\"]");
     private final By CHECKBOX = By.xpath("//input[@type=\"checkbox\"]");
     public String homePage = "https://www.ss.com/en";
     private final By ADDTOFAVORITES = By.xpath("//*[contains(@id, 'a_fav')]");
@@ -62,6 +63,16 @@ public class HomePage {
 
     public String getMemoId() {
         return baseFunc.getElement(MEMOID).getText();
+    }
+
+    public void selectMenuItem(String item) {
+        List<WebElement> menuItems = baseFunc.getElements(MAIN_MENU);
+        for (int i = 0; i < menuItems.size(); i++) {
+            if (menuItems.get(i).getText().equals(item)) {
+                menuItems.get(i).click();
+                break;
+            }
+        }
     }
 
 //    private WebElement getAds(int id) {
