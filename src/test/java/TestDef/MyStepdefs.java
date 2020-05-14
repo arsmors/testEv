@@ -13,8 +13,11 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 
 public class MyStepdefs {
+
     BaseFunc baseFunc = new BaseFunc();
     HomePage homePage = new HomePage(baseFunc);
+    SearchPage searchPage = new SearchPage(baseFunc);
+    FavoritesPage favoritesPage = new FavoritesPage(baseFunc);
 
     private final By MEMOPAGEADS = By.xpath("//td[@class=\"msga2 pp0\"]");
 
@@ -30,7 +33,7 @@ public class MyStepdefs {
 
     @And("add to favorites")
     public void addToFavorites() {
-        homePage.addToFavorites();
+        favoritesPage.addToFavorites();
     }
 
     @Then("ads are displayed on page")
@@ -47,10 +50,10 @@ public class MyStepdefs {
 
        int ads = listOfElements.size();
        try {
-           int memoToolbarId = Integer.parseInt(homePage.getMemoId().replaceAll("[^\\d.]", ""));
+           int memoToolbarId = Integer.parseInt(favoritesPage.getMemoId().replaceAll("[^\\d.]", ""));
            assertEquals("memo toolbar is showing incorrect qty", memoToolbarId, ads);
        } catch (Exception e) {
-           throw new NullPointerException("memo toolbar is empty or showing incorrect qty");
+           throw new NullPointerException("memo toolbar is empty or showing incorrect qty. Please check manually!");
        }
 
        baseFunc.closePage();
@@ -71,7 +74,6 @@ public class MyStepdefs {
 
     @And("search for {string} item")
     public void searchForItem(String item) {
-        homePage.enterSearchDetails(item);
-//        homePage.clickSubmitSearchButton();
+        searchPage.enterSearchDetails(item);
     }
 }
