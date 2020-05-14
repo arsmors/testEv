@@ -1,6 +1,7 @@
 package TestDef;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 
 import java.util.List;
@@ -18,6 +19,9 @@ public class HomePage {
     private final By MEMOID = By.xpath("//span[@id=\"mnu_fav_id\"]");
     private final By MEMOPAGEADS = By.xpath("//td[@class=\"msga2 pp0\"]");
 
+    private final By SEARCH_BOX = By.xpath("//input[@type=\"text\"]");
+    private final By SEARCH_BUTTON = By.xpath("//input[@type=\"submit\"]");
+    private final By CLICKOUTSIDEAREA = By.xpath("driver.get(\"//html\");");
 
     public HomePage(BaseFunc baseFunc) {
         this.baseFunc = baseFunc;
@@ -74,6 +78,19 @@ public class HomePage {
             }
         }
     }
+
+    public void enterSearchDetails(String search) {
+        baseFunc.getElement(SEARCH_BOX).click();
+        baseFunc.getElement(SEARCH_BOX).sendKeys(search);
+        baseFunc.getElement(SEARCH_BOX).sendKeys(Keys.RETURN);
+//        baseFunc.getElement(CLICKOUTSIDEAREA).click();
+    }
+
+    public void clickSubmitSearchButton() {
+        baseFunc.getElement(SEARCH_BUTTON).click();
+    }
+
+
 
 //    private WebElement getAds(int id) {
 //        List<WebElement> items = baseFunc.getElements(MEMOPAGEADS);

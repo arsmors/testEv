@@ -68,4 +68,10 @@ public class MyStepdefs {
         homePage.openHomePage("");
         homePage.selectMenuItem(item);
     }
+
+    @And("search for {string} item")
+    public void searchForItem(String item) {
+        homePage.enterSearchDetails(item);
+//        homePage.clickSubmitSearchButton();
+    }
 }
