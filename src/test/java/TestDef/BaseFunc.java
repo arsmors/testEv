@@ -3,8 +3,6 @@ package TestDef;
 import org.junit.Assert;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
-
-import org.openqa.selenium.Keys;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 

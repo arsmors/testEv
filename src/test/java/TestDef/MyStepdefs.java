@@ -4,13 +4,6 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
-
-import java.util.List;
-
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
 
 public class MyStepdefs {
 
@@ -18,8 +11,6 @@ public class MyStepdefs {
     HomePage homePage = new HomePage(baseFunc);
     SearchPage searchPage = new SearchPage(baseFunc);
     FavoritesPage favoritesPage = new FavoritesPage(baseFunc);
-
-
 
     @Given("website with category {string}")
     public void websiteWithCategory(String category) {
